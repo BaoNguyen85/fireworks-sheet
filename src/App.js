@@ -6,6 +6,8 @@ function App() {
   const [showGreeting, setShowGreeting] = useState(true);
 
   useEffect(() => {
+    const introDurationMs = 5600;
+    const fireworksDurationMs = 3000;
     let interval;
 
     // Hàm bắn pháo hoa cầu kỳ
@@ -43,12 +45,12 @@ function App() {
       setShowGreeting(false);
       fireworkBurst();
       interval = setInterval(fireworkBurst, 2500);
-    }, 3400);
+    }, introDurationMs);
 
-    // Sau 5s kể từ lúc bắt đầu thì dừng pháo hoa
+    // Sau 3s kể từ lúc bắt đầu thì dừng pháo hoa
     const stopTimeout = setTimeout(() => {
       clearInterval(interval);
-    }, 7000);
+    }, introDurationMs + fireworksDurationMs);
 
     return () => {
       clearTimeout(startTimeout);
