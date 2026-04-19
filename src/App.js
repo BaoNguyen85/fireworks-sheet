@@ -43,7 +43,7 @@ function App() {
       setShowGreeting(false);
       fireworkBurst();
       interval = setInterval(fireworkBurst, 2500);
-    }, 2000);
+    }, 2600);
 
     // Sau 5s kể từ lúc bắt đầu thì dừng pháo hoa
     const stopTimeout = setTimeout(() => {
