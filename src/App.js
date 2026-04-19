@@ -37,10 +37,10 @@ function App() {
     // Lặp lại hiệu ứng pháo hoa nhiều lần
     fireworkBurst();
     const interval = setInterval(fireworkBurst, 2500);
-    // Sau 10s thì dừng lặp lại pháo hoa
+    // Sau 5s thì dừng lặp lại pháo hoa
     const timeout = setTimeout(() => {
       clearInterval(interval);
-    }, 10000);
+    }, 5000);
     return () => {
       clearInterval(interval);
       clearTimeout(timeout);
