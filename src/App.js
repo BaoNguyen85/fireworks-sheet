@@ -70,8 +70,13 @@ function App() {
           <span className="spotlight-cone" />
           <span className="spotlight-glow" />
           <span className="top-valance" />
+          <span className="valance-folds" />
           <span className="curtain curtain-left" />
           <span className="curtain curtain-right" />
+          <span className="tie tie-left" />
+          <span className="tie tie-right" />
+          <span className="tassel tassel-left" />
+          <span className="tassel tassel-right" />
           <div className="cake-scene">
             <div className="cake">
               <span className="cake-layer cake-top" />
