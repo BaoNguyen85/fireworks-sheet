@@ -91,11 +91,12 @@ iframe {
   height: 130px;
   z-index: 5;
   background:
-    radial-gradient(120px 68px at 10% 0, #d81335 35%, #a30221 72%, transparent 73%),
-    radial-gradient(120px 68px at 30% 0, #d81335 35%, #a30221 72%, transparent 73%),
-    radial-gradient(120px 68px at 50% 0, #d81335 35%, #a30221 72%, transparent 73%),
-    radial-gradient(120px 68px at 70% 0, #d81335 35%, #a30221 72%, transparent 73%),
-    radial-gradient(120px 68px at 90% 0, #d81335 35%, #a30221 72%, transparent 73%);
+    radial-gradient(130px 72px at 10% 0, #ef2749 35%, #aa0222 73%, transparent 74%),
+    radial-gradient(130px 72px at 30% 0, #ef2749 35%, #aa0222 73%, transparent 74%),
+    radial-gradient(130px 72px at 50% 0, #ef2749 35%, #aa0222 73%, transparent 74%),
+    radial-gradient(130px 72px at 70% 0, #ef2749 35%, #aa0222 73%, transparent 74%),
+    radial-gradient(130px 72px at 90% 0, #ef2749 35%, #aa0222 73%, transparent 74%);
+  filter: drop-shadow(0 5px 4px rgba(0, 0, 0, 0.25));
 }
 
 .curtain {
@@ -105,13 +106,17 @@ iframe {
   height: 100%;
   z-index: 6;
   background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0) 24%),
     repeating-linear-gradient(
       90deg,
-      #98061f 0 20px,
-      #cf1739 20px 34px,
-      #840018 34px 48px
+      #7f0018 0 10px,
+      #bd0d2d 10px 20px,
+      #e42a49 20px 27px,
+      #96001e 27px 38px
     );
-  box-shadow: inset -12px 0 24px rgba(0, 0, 0, 0.28);
+  box-shadow:
+    inset -18px 0 26px rgba(0, 0, 0, 0.28),
+    inset 0 -22px 26px rgba(58, 0, 8, 0.45);
   animation: curtainOpen 3.3s ease-in-out forwards;
 }
 
@@ -119,6 +124,7 @@ iframe {
   left: 0;
   transform-origin: left center;
   border-right: 3px solid rgba(66, 0, 10, 0.5);
+  clip-path: polygon(0 0, 100% 0, 93% 20%, 96% 42%, 89% 63%, 95% 100%, 0 100%);
 }
 
 .curtain-right {
@@ -127,6 +133,43 @@ iframe {
   box-shadow: inset 12px 0 24px rgba(0, 0, 0, 0.28);
   border-left: 3px solid rgba(66, 0, 10, 0.5);
   animation-name: curtainOpenRight;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 5% 100%, 11% 63%, 4% 42%, 7% 20%);
+}
+
+.curtain::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 56px;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(30, 0, 4, 0.2), rgba(255, 255, 255, 0.07), rgba(24, 0, 5, 0.26));
+}
+
+.curtain-left::before {
+  right: 16px;
+}
+
+.curtain-right::before {
+  left: 16px;
+}
+
+.curtain::after {
+  content: "";
+  position: absolute;
+  bottom: 190px;
+  width: 52px;
+  height: 16px;
+  border-radius: 99px;
+  background: linear-gradient(180deg, #f8d052 0%, #c68a0f 100%);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.curtain-left::after {
+  right: 10px;
+}
+
+.curtain-right::after {
+  left: 10px;
 }
 
 .greeting-text {
