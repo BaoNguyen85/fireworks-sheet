@@ -85,21 +85,48 @@ iframe {
   position: fixed;
   inset: 0;
   margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  font-size: clamp(1.3rem, 3.3vw, 2.3rem);
-  font-weight: 700;
-  color: #1d2f4d;
-  background: linear-gradient(
-    160deg,
-    rgba(255, 255, 255, 0.95),
-    rgba(222, 239, 255, 0.95)
-  );
+  overflow: hidden;
   z-index: 20;
+  pointer-events: none;
+  background: rgba(20, 28, 48, 0.14);
+}
+
+.curtain {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, #8d1224 0%, #c11e37 45%, #8d1224 100%);
+  box-shadow: inset -8px 0 20px rgba(0, 0, 0, 0.2);
+  animation: curtainOpen 2.5s ease-in-out forwards;
+}
+
+.curtain-left {
+  left: 0;
+  transform-origin: left center;
+}
+
+.curtain-right {
+  right: 0;
+  transform-origin: right center;
+  box-shadow: inset 8px 0 20px rgba(0, 0, 0, 0.2);
+  animation-name: curtainOpenRight;
+}
+
+.greeting-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  transform: translate(-50%, -50%);
+  padding: 0 24px;
+  max-width: min(90vw, 900px);
+  font-size: clamp(1.3rem, 3.2vw, 2.2rem);
+  font-weight: 700;
+  color: #fff8df;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.45);
   text-align: center;
-  animation: greetingFlyAway 2.5s ease-in forwards;
+  animation: greetingTextFade 2.5s ease-in-out forwards;
 }
 
 @keyframes flyCloud {
@@ -111,18 +138,42 @@ iframe {
   }
 }
 
-@keyframes greetingFlyAway {
+@keyframes curtainOpen {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-102%);
+  }
+}
+
+@keyframes curtainOpenRight {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(102%);
+  }
+}
+
+@keyframes greetingTextFade {
   0% {
     opacity: 0;
-    transform: translateY(32px) scale(0.96);
+    transform: translate(-50%, -42%);
   }
-  20%,
-  55% {
+  15%,
+  60% {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translate(-50%, -50%);
   }
   100% {
     opacity: 0;
-    transform: translate(-70vw, -85vh) scale(0.55) rotate(-9deg);
+    transform: translate(-50%, -58%);
   }
 }

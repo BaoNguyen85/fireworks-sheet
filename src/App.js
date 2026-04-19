@@ -69,9 +69,13 @@ function App() {
       </div>
 
       {showGreeting && (
-        <p className="greeting">
-          Chúc anh/chị/em một ngày làm việc thật năng suất và vui vẻ
-        </p>
+        <div className="greeting" aria-hidden="true">
+          <span className="curtain curtain-left" />
+          <span className="curtain curtain-right" />
+          <p className="greeting-text">
+            Chúc anh/chị/em một ngày làm việc thật năng suất và vui vẻ
+          </p>
+        </div>
       )}
 
       <iframe
