@@ -4,11 +4,40 @@ import "./App.css";
 
 function App() {
   useEffect(() => {
-    confetti({
-      particleCount: 200,
-      spread: 120,
-      origin: { y: 0.6 },
-    });
+    // Hàm bắn pháo hoa cầu kỳ
+    function fireworkBurst() {
+      const colors = [
+        '#ff0043', '#14fc56', '#1e90ff', '#ffd700', '#ff7f50', '#00ffff', '#ff69b4', '#ffffff', '#ffa500', '#9400d3'
+      ];
+      // Bắn nhiều đợt pháo hoa với các thông số khác nhau
+      for (let i = 0; i < 7; i++) {
+        setTimeout(() => {
+          confetti({
+            particleCount: 80 + Math.floor(Math.random() * 120),
+            angle: 60 + Math.random() * 60,
+            spread: 55 + Math.random() * 120,
+            startVelocity: 40 + Math.random() * 30,
+            gravity: 0.7 + Math.random() * 0.3,
+            decay: 0.88 + Math.random() * 0.07,
+            scalar: 0.8 + Math.random() * 0.7,
+            shapes: [Math.random() > 0.5 ? 'circle' : 'square'],
+            colors: [
+              colors[Math.floor(Math.random() * colors.length)],
+              colors[Math.floor(Math.random() * colors.length)]
+            ],
+            origin: {
+              x: 0.1 + Math.random() * 0.8,
+              y: 0.2 + Math.random() * 0.5
+            }
+          });
+        }, i * 350);
+      }
+    }
+
+    // Lặp lại hiệu ứng pháo hoa nhiều lần
+    fireworkBurst();
+    const interval = setInterval(fireworkBurst, 2500);
+    return () => clearInterval(interval);
   }, []);
 
   return (
