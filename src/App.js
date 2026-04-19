@@ -60,11 +60,6 @@ function App() {
   return (
     <div className="App">
       <div className="hero">
-        <div className="clouds" aria-hidden="true">
-          <span className="cloud cloud-1" />
-          <span className="cloud cloud-2" />
-          <span className="cloud cloud-3" />
-        </div>
         <h1>🎉 Welcome 🎉</h1>
       </div>
 
@@ -79,6 +74,15 @@ function App() {
               <span className="candle" />
               <span className="flame" />
               <span className="smoke" />
+            </div>
+            <div className="doraemon">
+              <span className="dora-head" />
+              <span className="dora-face" />
+              <span className="dora-eye dora-eye-left" />
+              <span className="dora-eye dora-eye-right" />
+              <span className="dora-nose" />
+              <span className="dora-mouth" />
+              <span className="dora-breath" />
             </div>
           </div>
           <p className="greeting-text">
