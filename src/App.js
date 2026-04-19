@@ -43,7 +43,7 @@ function App() {
       setShowGreeting(false);
       fireworkBurst();
       interval = setInterval(fireworkBurst, 2500);
-    }, 2600);
+    }, 3400);
 
     // Sau 5s kể từ lúc bắt đầu thì dừng pháo hoa
     const stopTimeout = setTimeout(() => {
@@ -72,6 +72,15 @@ function App() {
         <div className="greeting" aria-hidden="true">
           <span className="curtain curtain-left" />
           <span className="curtain curtain-right" />
+          <div className="cake-scene">
+            <div className="cake">
+              <span className="cake-layer cake-top" />
+              <span className="cake-layer cake-bottom" />
+              <span className="candle" />
+              <span className="flame" />
+              <span className="smoke" />
+            </div>
+          </div>
           <p className="greeting-text">
             Chúc anh/chị/em một ngày làm việc thật năng suất và vui vẻ
           </p>
