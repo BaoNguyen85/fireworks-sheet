@@ -65,6 +65,11 @@ function App() {
 
       {showGreeting && (
         <div className="greeting" aria-hidden="true">
+          <span className="stage-backdrop" />
+          <span className="stage-floor" />
+          <span className="spotlight-cone" />
+          <span className="spotlight-glow" />
+          <span className="top-valance" />
           <span className="curtain curtain-left" />
           <span className="curtain curtain-right" />
           <div className="cake-scene">
