@@ -1,9 +1,13 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import confetti from "canvas-confetti";
 import "./App.css";
 
 function App() {
+  const [showGreeting, setShowGreeting] = useState(true);
+
   useEffect(() => {
+    let interval;
+
     // Hàm bắn pháo hoa cầu kỳ
     function fireworkBurst() {
       const colors = [
@@ -34,22 +38,41 @@ function App() {
       }
     }
 
-    // Lặp lại hiệu ứng pháo hoa nhiều lần
-    fireworkBurst();
-    const interval = setInterval(fireworkBurst, 2500);
-    // Sau 5s thì dừng lặp lại pháo hoa
-    const timeout = setTimeout(() => {
+    // Hiện lời chúc trước, rồi mới bắt đầu pháo hoa
+    const startTimeout = setTimeout(() => {
+      setShowGreeting(false);
+      fireworkBurst();
+      interval = setInterval(fireworkBurst, 2500);
+    }, 2000);
+
+    // Sau 5s kể từ lúc bắt đầu thì dừng pháo hoa
+    const stopTimeout = setTimeout(() => {
       clearInterval(interval);
-    }, 5000);
+    }, 7000);
+
     return () => {
+      clearTimeout(startTimeout);
       clearInterval(interval);
-      clearTimeout(timeout);
+      clearTimeout(stopTimeout);
     };
   }, []);
 
   return (
     <div className="App">
-      <h1>🎉 Welcome 🎉</h1>
+      <div className="hero">
+        <div className="clouds" aria-hidden="true">
+          <span className="cloud cloud-1" />
+          <span className="cloud cloud-2" />
+          <span className="cloud cloud-3" />
+        </div>
+        <h1>🎉 Welcome 🎉</h1>
+      </div>
+
+      {showGreeting && (
+        <p className="greeting">
+          Chúc anh/chị/em một ngày làm việc thật năng suất và vui vẻ
+        </p>
+      )}
 
       <iframe
         src="https://docs.google.com/spreadsheets/d/1J5E7nezOhJ1N3Xjh1PBjnyjStRyW8-KdwQJtUKRhRGc/edit?gid=2032942343#gid=2032942343"
