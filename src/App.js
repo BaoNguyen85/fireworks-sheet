@@ -65,39 +65,16 @@ function App() {
 
       {showGreeting && (
         <div className="greeting" aria-hidden="true">
-          <span className="stage-backdrop" />
-          <span className="stage-floor" />
-          <span className="spotlight-cone" />
-          <span className="spotlight-glow" />
-          <span className="top-valance" />
-          <span className="valance-folds" />
-          <span className="curtain curtain-left" />
-          <span className="curtain curtain-right" />
-          <span className="tie tie-left" />
-          <span className="tie tie-right" />
-          <span className="tassel tassel-left" />
-          <span className="tassel tassel-right" />
-          <div className="cake-scene">
-            <div className="cake">
-              <span className="cake-layer cake-top" />
-              <span className="cake-layer cake-bottom" />
-              <span className="candle" />
-              <span className="flame" />
-              <span className="smoke" />
-            </div>
-            <div className="doraemon">
-              <span className="dora-head" />
-              <span className="dora-face" />
-              <span className="dora-eye dora-eye-left" />
-              <span className="dora-eye dora-eye-right" />
-              <span className="dora-nose" />
-              <span className="dora-mouth" />
-              <span className="dora-breath" />
+          <div className="envelope-scene">
+            <div className="envelope">
+              <span className="envelope-letter">
+                Chúc anh/chị/em một ngày làm việc thật năng suất và vui vẻ
+              </span>
+              <span className="envelope-back" />
+              <span className="envelope-flap" />
+              <span className="envelope-front" />
             </div>
           </div>
-          <p className="greeting-text">
-            Chúc anh/chị/em một ngày làm việc thật năng suất và vui vẻ
-          </p>
         </div>
       )}
 
