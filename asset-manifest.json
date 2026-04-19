@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/fireworks-sheet/static/css/main.dfa92973.css",
-    "main.js": "/fireworks-sheet/static/js/main.5ad117c7.js",
+    "main.css": "/fireworks-sheet/static/css/main.4f61b152.css",
+    "main.js": "/fireworks-sheet/static/js/main.361062a2.js",
     "static/js/453.50426402.chunk.js": "/fireworks-sheet/static/js/453.50426402.chunk.js",
     "index.html": "/fireworks-sheet/index.html",
-    "main.dfa92973.css.map": "/fireworks-sheet/static/css/main.dfa92973.css.map",
-    "main.5ad117c7.js.map": "/fireworks-sheet/static/js/main.5ad117c7.js.map",
+    "main.4f61b152.css.map": "/fireworks-sheet/static/css/main.4f61b152.css.map",
+    "main.361062a2.js.map": "/fireworks-sheet/static/js/main.361062a2.js.map",
     "453.50426402.chunk.js.map": "/fireworks-sheet/static/js/453.50426402.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.dfa92973.css",
-    "static/js/main.5ad117c7.js"
+    "static/css/main.4f61b152.css",
+    "static/js/main.361062a2.js"
   ]
 }
